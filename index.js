@@ -148,7 +148,7 @@ async function callGeminiAPIAsMissJava(userPrompt) {
         If the user answers the riddle correctly with a neutral or indifferent tone, acknowledge their answer briefly and say goodbye with a hint that they are overlooking their own flaws (the "bug" within). End the interaction.
         If the user answers the riddle correctly and respectfully, acknowledge their intelligence and perhaps offer a small compliment. Then, without ending the turn, reveal a piece of insider information about the "bug" that has taken over the Woods, hinting at a connection between the user and the bug. Do not repeat the riddle.`;
         try {
-            const response = await fetch('/.netlify/functions/gemini', { // Path to your Netlify Function
+            const response = await fetch('netlify/functions/gemini.mjs', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
