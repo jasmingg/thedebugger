@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Jungle Game</title>
+  <style>
+    body { margin: 0; overflow:auto; background-image: url('background.jpg'); background-size:contain; background-attachment: fixed; }
+    #player {
+    position: fixed; /* Will be changed from fixed to absolute for positioning */
+    width: 100px; /* Set an initial width that makes sense for Monty */
+    height: 150px; /* Set an initial height that makes sense for Monty */
+    background-image: url('monty-default.png');
+    background-size: contain; /* Changed to contain to fit the image within the defined dimensions */
+    background-repeat: no-repeat;
+  }
+
+    #dot {
+      position: fixed;
+      width: 10%;
+      height: 10%;
+      background-image: url('dot.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    #gemini-response-box {
+            position: fixed; /* Stay at the bottom even when scrolling (though there's no scroll here) */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            color: white;
+            padding: 20px;
+            box-sizing: border-box; /* Include padding in width and height */
+            font-family: sans-serif; /* Or your preferred font */
+            font-size: 1em;
+            line-height: 1.4;
+            white-space: pre-wrap; /* Preserve whitespace and wrap text */
+            overflow-y: auto; /* Add scroll if text overflows vertically */
+            height: 200px; /* Optional: Set a maximum height */
+        }
+  </style>
+</head>
+
+<body>
+  <canvas id="gameCanvas"></canvas>
+  <div id="player"></div>
+  <div id="dot"></div>
+  <div id="gemini-response-box"></div>
+  <div id="chatbox-container" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 10px; box-sizing: border-box; display: none;">
+    <div id="chatbox-messages" style="height: 150px; overflow-y: auto; margin-bottom: 5px; padding: 5px; background-color: #333;"></div>
+    <div style="display: flex;">
+        <input type="text" id="chatbox-input" style="flex-grow: 1; padding: 8px; color: black;" placeholder="Type your message...">
+        <button id="chatbox-send-button" style="padding: 8px 15px; margin-left: 5px; cursor: pointer; background-color: #555; color: white; border: none;">Send</button>
+    </div>
+</div>
+  <script src="chatbot.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
